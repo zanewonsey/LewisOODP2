@@ -1,16 +1,13 @@
-/**
- * 
- */
 package me.wonsey.ood;
 
-public class Sprinkles extends BakedGoodDecorator
+public class IceCream extends BakedGoodDecorator
 {
 	BakedGood bakedItem;
 	
 	/**
 	 * 
 	 */
-	public Sprinkles(BakedGood bakedItem)
+	public IceCream(BakedGood bakedItem)
 	{
 		this.bakedItem = bakedItem;
 	}
@@ -21,7 +18,7 @@ public class Sprinkles extends BakedGoodDecorator
 	@Override
 	public String getDescription()
 	{
-		return bakedItem.getDescription() + ", with spinkles";
+		return bakedItem.getDescription() + ", with ice cream";
 	}
 
 	/**
@@ -32,5 +29,4 @@ public class Sprinkles extends BakedGoodDecorator
 	{
 		return 0.1 + this.bakedItem.cost();
 	}
-
 }
