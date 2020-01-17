@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 package me.wonsey.ood;
 
 public class Nuts extends BakedGoodDecorator
