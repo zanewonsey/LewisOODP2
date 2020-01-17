@@ -2,9 +2,24 @@ package me.wonsey.ood;
 
 import java.util.Scanner;
 
+enum InputOptions
+{
+   INVALID,
+   CAKE,
+   PIE,
+   DOUGHNUT,
+   COOKIE,
+   RESET,
+   EXIT
+}
+
 public class Driver
 {
+    static InputOptions options;
 
+    /**
+     * The main driving function of the program. Session ends
+     */
    public static void main(String[] args)
    {
       Scanner user_in = new Scanner(System.in);
@@ -16,40 +31,53 @@ public class Driver
           printMenu();
          try
          {
-            user_choice = Integer.parseInt(user_in.next());
-            switch (user_choice)
+            //user_choice = Integer.parseInt(user_in.next());
+            options = InputOptions.valueOf(user_in.next().toUpperCase());
+            switch (options)
             {
-            case 1:
+            case CAKE:
                break;
-            case 2:
+            case PIE:
                 break;
-            case 3:
+            case DOUGHNUT:
                 break;
-            case 4:
+            case COOKIE:
                 break;
-            case 5:
+            case RESET:
+                System.out.println("Tossed the baked good in the bin");
+                break;
+            case EXIT:
+                bRunning = false;
                 break;
             default:
-               System.out.println("Invalid input: enter a number");
-               break;
+               throw new Exception();
             }
          }
          catch (Exception e)
          {
-            System.out.println("Invalid input: enter a number");
+            System.out.println("Invalid input: enter an item on sale, or exit to end the sale.");
          }
+         System.out.println("end of while");
       }
       
+      // Need to make sure resource is closed off
       user_in.close();
       
    }
    
+   /**
+    * 
+    */
    static void printMenu()
    {
-       System.out.println();
-       System.out.println();
-       System.out.println();
-       System.out.println();
+       System.out.println("Please type one of the following to get started:");
+       System.out.print  (InputOptions.CAKE.toString().toLowerCase()+", ");
+       System.out.print  (InputOptions.COOKIE.toString().toLowerCase()+", ");
+       System.out.print  (InputOptions.DOUGHNUT.toString().toLowerCase()+", ");
+       System.out.println(InputOptions.PIE.toString().toLowerCase());
+       
+       System.out.print  ("You can also enter reset to toss out your current selection, ");
+       System.out.println("or exit to walk away.");
    }
    
    
