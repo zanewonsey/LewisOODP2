@@ -2,6 +2,9 @@ package me.wonsey.ood;
 
 import java.util.Scanner;
 
+// This enum is here to avoid obscure 'option 1, 2, 3, etc'
+//  in the dialog. It also makes the switch statements more
+//  readable
 enum InputOptions
 {
    INVALID,
@@ -9,6 +12,7 @@ enum InputOptions
    PIE,
    DOUGHNUT,
    COOKIE,
+   TOPPINGS,
    SPRINKLES,
    ICECREAM,
    NUTS,
@@ -58,6 +62,9 @@ public class Driver
                 food = new Cookie();
                 manageDecoratorMenu();
                 break;
+            case TOPPINGS:
+                manageDecoratorMenu();
+                break;
             case RESET:
                 food = null;
                 System.out.println("Tossed the baked good in the bin\n");
@@ -81,8 +88,11 @@ public class Driver
          // Added this check to remove last print when exiting
          if (bRunning)
          {
+             // The ternary checks are there to remove need for the extra
+             //  unneeded if statements
             System.out.println("Your current selection: "
                                +((food != null) ? food.getDescription() : "none"));
+            System.out.println("Current total: $"+((food != null) ? food.cost() : "$0.00"));
          }
          
       }
@@ -92,9 +102,6 @@ public class Driver
       
    }
    
-   /**
-    * 
-    */
    static void manageDecoratorMenu()
    {
       while (bRunning)
@@ -139,12 +146,10 @@ public class Driver
          
          // This isn't reached if 'back' was selected
          System.out.println("Your current selection: "+food.getDescription());
+         System.out.println("Current total: $"+food.cost());
       }
    }
    
-   /**
-    * 
-    */
    static void printDecoratorMenu()
    {
        System.out.println("Please type one of the following to add a topping:");
@@ -158,48 +163,18 @@ public class Driver
        
    }
    
-   /**
-    * 
-    */
    static void printMenu()
    {
        System.out.println("Please type one of the following to get started:");
        System.out.print  (InputOptions.CAKE.toString().toLowerCase()+", ");
        System.out.print  (InputOptions.COOKIE.toString().toLowerCase()+", ");
        System.out.print  (InputOptions.DOUGHNUT.toString().toLowerCase()+", ");
-       System.out.println(InputOptions.PIE.toString().toLowerCase());
+       System.out.println(InputOptions.PIE.toString().toLowerCase()+"\n");
        
-       System.out.print  ("You can also enter reset to toss out your current selection, ");
-       System.out.println("or exit to walk away.");
+       System.out.print  ("You can also enter reset to toss out your current selection,\n"
+                          +" toppings to continue with your current selection,\n"
+                          +" or exit to walk away.");
    }
    
 }
-
-
-/**
-food = new Cake();
-System.out.println(food.getDescription()+" $"+food.cost());
-
-food = new Sprinkles(food);
-System.out.println(food.getDescription()+" $"+food.cost());
-
-food = new Pie();
-System.out.println(food.getDescription()+" $"+food.cost());
-
-food = new Nuts(food);
-System.out.println(food.getDescription()+" $"+food.cost());
-
-food = new ChocolateFrosting(food);
-System.out.println(food.getDescription()+" $"+food.cost());
-
-food = new IceCream(food);
-System.out.println(food.getDescription()+" $"+food.cost());
-
-food = new Cookie();
-System.out.println(food.getDescription()+" $"+food.cost());
-
-food = new WhippedCream(food);
-System.out.println(food.getDescription()+" $"+food.cost());
-*/
-
 
