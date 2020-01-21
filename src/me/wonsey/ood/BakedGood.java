@@ -9,7 +9,7 @@ package me.wonsey.ood;
  */
 public abstract class BakedGood
 {
-   String description = "Unknown Baked Good";
+   protected String description = "Unknown Baked Good";
    
    public String getDescription()
    {

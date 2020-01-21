@@ -1,7 +1,10 @@
 /**
  * 
  */
-package me.wonsey.ood;
+package me.wonsey.ood.decorators;
+
+import me.wonsey.ood.BakedGood;
+import me.wonsey.ood.BakedGoodDecorator;
 
 public class Sprinkles extends BakedGoodDecorator
 {
