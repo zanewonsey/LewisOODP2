@@ -2,6 +2,16 @@ package me.wonsey.ood;
 
 import java.util.Scanner;
 
+import me.wonsey.ood.concrete.Cake;
+import me.wonsey.ood.concrete.Cookie;
+import me.wonsey.ood.concrete.Doughnut;
+import me.wonsey.ood.concrete.Pie;
+import me.wonsey.ood.decorators.ChocolateFrosting;
+import me.wonsey.ood.decorators.IceCream;
+import me.wonsey.ood.decorators.Nuts;
+import me.wonsey.ood.decorators.Sprinkles;
+import me.wonsey.ood.decorators.WhippedCream;
+
 // This enum is here to avoid obscure 'option 1, 2, 3, etc'
 //  in the dialog. It also makes the switch statements more
 //  readable
@@ -34,8 +44,9 @@ public class Driver
     /**
      * The main driving function of the program.
      */
-   public static void main(String[] args)
+   /*public static void main(String[] args)
    {
+       Gui.buildGui("Mr. Baked's Bakery", 600, 800);
       while (bRunning)
       {
          printMenu();
@@ -100,7 +111,7 @@ public class Driver
       // Need to make sure resource is closed off
       user_in.close();
       
-   }
+   }*/
    
    static void manageDecoratorMenu()
    {

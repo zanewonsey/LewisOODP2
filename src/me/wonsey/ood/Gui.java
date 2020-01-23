@@ -16,6 +16,8 @@ public class Gui
    
    JFrame frame;
    
+   JPanel panel;
+   
    JPanel panelConcrete;
    JButton buttonPie;
    JButton buttonCake;
@@ -45,6 +47,7 @@ public class Gui
       menuBar.add(menuFile);
       menuBar.add(menuHelp);
       
+      panel = new JPanel();
       panelConcrete = new JPanel();
       panelDecorators = new JPanel();
       
@@ -89,13 +92,75 @@ public class Gui
          }
       });
       
+      buttonSprinkles = new JButton("Sprinkles");
+      buttonSprinkles.addActionListener(new ActionListener()
+      {
+         
+         @Override
+         public void actionPerformed(ActionEvent e)
+         {
+            System.out.println("Sprinkles stuff");
+         }
+      });
+      buttonNuts = new JButton("Nuts");
+      buttonNuts.addActionListener(new ActionListener()
+      {
+         
+         @Override
+         public void actionPerformed(ActionEvent e)
+         {
+            System.out.println("Nuts stuff");
+         }
+      });
+      buttonWhippedCream = new JButton("Whipped Cream");
+      buttonWhippedCream.addActionListener(new ActionListener()
+      {
+         
+         @Override
+         public void actionPerformed(ActionEvent e)
+         {
+            System.out.println("Whipped Cream stuff");
+         }
+      });
+      buttonIceCream = new JButton("Ice Cream");
+      buttonIceCream.addActionListener(new ActionListener()
+      {
+         
+         @Override
+         public void actionPerformed(ActionEvent e)
+         {
+            System.out.println("Ice Cream stuff");
+         }
+      });
+      buttonChocolateFrosting = new JButton("Chocolate Frosting");
+      buttonChocolateFrosting.addActionListener(new ActionListener()
+      {
+         
+         @Override
+         public void actionPerformed(ActionEvent e)
+         {
+            System.out.println("Chocolate Frosting stuff");
+         }
+      });
+      
       panelConcrete.add(buttonPie);
       panelConcrete.add(buttonCake);
       panelConcrete.add(buttonDoughnut);
       panelConcrete.add(buttonCookie);
       
+      panelDecorators.add(buttonSprinkles);
+      panelDecorators.add(buttonNuts);
+      panelDecorators.add(buttonWhippedCream);
+      panelDecorators.add(buttonIceCream);
+      panelDecorators.add(buttonChocolateFrosting);
+      
+      panel.add(panelConcrete);
+      panel.add(panelDecorators);
+      
       frame.getContentPane().add(BorderLayout.NORTH,menuBar);
-      frame.getContentPane().add(panelConcrete);
+      frame.getContentPane().add(BorderLayout.CENTER, panel);
+      //frame.getContentPane().add(BorderLayout.CENTER, panelConcrete);
+      //frame.getContentPane().add(BorderLayout.SOUTH, panelDecorators);
       frame.setVisible(true);
    }
    
