@@ -5,6 +5,7 @@ package me.wonsey.ood.decorators;
 
 import me.wonsey.ood.BakedGood;
 import me.wonsey.ood.BakedGoodDecorator;
+import me.wonsey.ood.P2UI;
 
 public class IceCream extends BakedGoodDecorator
 {
@@ -16,6 +17,7 @@ public class IceCream extends BakedGoodDecorator
 	public IceCream(BakedGood bakedItem)
 	{
 		this.bakedItem = bakedItem;
+		P2UI.textArea.append("adding ice cream to: "+bakedItem.getDescription()+"\n");
 	}
 
 	/**

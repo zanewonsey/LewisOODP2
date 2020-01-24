@@ -2,10 +2,6 @@ package me.wonsey.ood;
 
 import java.util.Scanner;
 
-import me.wonsey.ood.concrete.Cake;
-import me.wonsey.ood.concrete.Cookie;
-import me.wonsey.ood.concrete.Doughnut;
-import me.wonsey.ood.concrete.Pie;
 import me.wonsey.ood.decorators.ChocolateFrosting;
 import me.wonsey.ood.decorators.IceCream;
 import me.wonsey.ood.decorators.Nuts;
