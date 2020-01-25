@@ -1,7 +1,11 @@
 /**
  * 
  */
-package me.wonsey.ood;
+package me.wonsey.ood.decorators;
+
+import me.wonsey.ood.BakedGood;
+import me.wonsey.ood.BakedGoodDecorator;
+import me.wonsey.ood.P2UI;
 
 public class ChocolateFrosting extends BakedGoodDecorator
 {
@@ -13,6 +17,7 @@ public class ChocolateFrosting extends BakedGoodDecorator
 	public ChocolateFrosting(BakedGood bakedItem)
 	{
 		this.bakedItem = bakedItem;
+		P2UI.textArea.append("adding chocolate frosting to: "+bakedItem.getDescription()+"\n");
 	}
 
 	/**

@@ -1,4 +1,6 @@
-package me.wonsey.ood;
+package me.wonsey.ood.concrete;
+
+import me.wonsey.ood.BakedGood;
 
 public class Doughnut extends BakedGood
 {
