@@ -8,8 +8,6 @@ import javax.swing.JPanel;
 import me.wonsey.ood.concrete.bakery.Bakery;
 import me.wonsey.ood.concrete.bakery.HomestyleBakery;
 import me.wonsey.ood.concrete.bakery.StreetsideBakery;
-import me.wonsey.ood.decorators.*;
-
 import javax.swing.JLabel;
 
 import javax.swing.JMenuBar;
@@ -215,67 +213,6 @@ public class P2UI
       JPanel panel_2 = new JPanel();
       panel_2.setBounds(10, 217, 338, 91);
       frame.getContentPane().add(panel_2);
-      
-      JButton btnNewButton_2 = new JButton("Sprinkles");
-      btnNewButton_2.setBounds(10, 5, 107, 23);
-      btnNewButton_2.addActionListener(new ActionListener()
-      {
-         public void actionPerformed(ActionEvent e)
-         {
-            bakedgood = new Sprinkles(bakedgood);
-            updateUI();
-         }
-      });
-      panel_2.setLayout(null);
-      panel_2.add(btnNewButton_2);
-      
-      JButton btnNewButton_3 = new JButton("Nuts");
-      btnNewButton_3.setBounds(127, 33, 63, 23);
-      btnNewButton_3.addActionListener(new ActionListener()
-      {
-         public void actionPerformed(ActionEvent e)
-         {
-            bakedgood = new Nuts(bakedgood);
-            updateUI();
-         }
-      });
-      panel_2.add(btnNewButton_3);
-      
-      JButton btnNewButton_4 = new JButton("Whipped Cream");
-      btnNewButton_4.setBounds(127, 5, 150, 23);
-      btnNewButton_4.addActionListener(new ActionListener()
-      {
-         public void actionPerformed(ActionEvent e)
-         {
-            bakedgood = new WhippedCream(bakedgood);
-            updateUI();
-         }
-      });
-      panel_2.add(btnNewButton_4);
-      
-      JButton btnNewButton_5 = new JButton("Ice Cream");
-      btnNewButton_5.setBounds(10, 33, 107, 23);
-      btnNewButton_5.addActionListener(new ActionListener()
-      {
-         public void actionPerformed(ActionEvent e)
-         {
-            bakedgood = new IceCream(bakedgood);
-            updateUI();
-         }
-      });
-      panel_2.add(btnNewButton_5);
-      
-      JButton btnNewButton_6 = new JButton("Chocolate Frosting");
-      btnNewButton_6.setBounds(10, 61, 174, 23);
-      btnNewButton_6.addActionListener(new ActionListener()
-      {
-         public void actionPerformed(ActionEvent e)
-         {
-            bakedgood = new ChocolateFrosting(bakedgood);
-            updateUI();
-         }
-      });
-      panel_2.add(btnNewButton_6);
       
    }
 }
